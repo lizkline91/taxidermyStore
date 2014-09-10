@@ -5,13 +5,13 @@ angular.module("product",["ngRoute"])
                 templateUrl: "views/product/list.html",
                 controller: "productCtrl"
             })
+            .when("/prod/:id",{
+              templateUrl:"views/product/show.html",
+              controller: "productCtrl"
+            })
 
             .when("/prod/add", {
               templateUrl: "views/product/create.html",
-              controller: "productCtrl"
-            })
-            .when("/prod/:id", {
-              templateUrl: "views/product/id.html",
               controller: "productCtrl"
             })
 

@@ -1,8 +1,19 @@
-<h2>PRODUCT <LIST></LIST></h2>
+<header>
+  <h1><a href="#/">Taxidermy</a> - Admin</h1>
+  <nav>
+    <ul>
+      <li><a href="#/prod"><i class="fa fa-eye"></i></a></li>
+      <li><a href="#/prod/new"><i class="fa fa-plus"></i></a></li>
+    </ul>
+  </nav>
+</header>
+<div class="create container">
+<h1>Add a new product here.</h1>
 <form action="" ng-submit="addProd(newProd)">
-    <h3><input type="text" ng-model="newProd.title" placeholder="Product Name"/></h3>
-    <input type="url" ng-model="newProd.image" placeholder="Image Url">
-    <p><input type="price" ng-model="newProd.price" placeholder="Price"/></p>
-    <textarea ng-model="newProd.description" name="" id="" cols="30" rows="10" placeholder="descprition"></textarea>
-    <button type="submit">Add Animal</button>
+    <input type="text" ng-model="newProd.name" placeholder="Name" required>
+    <textarea id="" cols="30" rows="10" ng-model="newProd.description" placeholder="Product Description"></textarea>
+    <input type="text" placeholder="URL for your image." ng-model="newProd.img_url" required>
+    <input type="rnumbe" placeholder="Price" ng-model="newProd.price" required>
+    <button type="submit">SUBMIT</button>
 </form>
+</div>

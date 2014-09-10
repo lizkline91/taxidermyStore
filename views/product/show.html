@@ -1,0 +1,24 @@
+<header>
+  <h1><a href="#/">Taxidermy</a> - Admin</h1>
+
+  <nav>
+    <ul>
+      <li><a href="#/products"><i class="fa fa-eye"></i></a></li>
+      <li><a href="#/products/new"><i class="fa fa-plus"></i></a></li>
+    </ul>
+  </nav>
+</header>
+<div class="show container">
+  <section>
+    <img src="{{singleProd.img_url}}" alt="">
+  </section>
+  <aside>
+    <h1>{{singleProd.name}}</h1>
+    <h3>{{singleProd.price}}</h2>
+    <p>{{singleProd.description}}</p>
+    <a href="#/prod"><i class="fa fa-arrow-left"></i></a>
+    <a href="#/prod/{{singleProduct._id}}/edit"><i class="fa fa-pencil-square-o"></i></a>
+
+  </aside>
+
+</div>

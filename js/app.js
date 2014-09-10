@@ -1,5 +1,4 @@
- angular.module("mainController",
-    ["product","ngRoute"])
+ angular.module("mainController", ["product", "productSvc", "productCtrl",  "ngRoute"])
 
 .config(function ($routeProvider) {
 
@@ -9,9 +8,7 @@
             controller: "homeCtrl"
         })
 
-        .otherwise({
-            redirectTo: "/"
-        });
 });
 
 angular.module("productSvc", []);
+angular.module("productCtrl", []);

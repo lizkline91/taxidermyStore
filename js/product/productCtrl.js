@@ -1,28 +1,48 @@
 angular.module("product")
   .controller("productCtrl", function ($rootScope, $scope, $location, $routeParams, productSvc) {
 
-    $scope.prods = productSvc.getProds();
+    productSvc.getProds().then(function(prods){
 
-    $scope.goToAdd = function () {
-      $location.path("/prod/add");
-    };
+      $scope.prods = prods.data;
+      console.log(prods.data);
 
-    $scope.singleProd = productSvc.findIndex($routeParams.idx);
+    })
+
+    productSvc.getProd($routeParams.id).then(function (response){
+      $scope.singleProd = response.data;
+    })
 
     $scope.addProd = function (newProd) {
-      productSvc.addProd(newProd);
+      productSvc.addProd(newProd)
 
-      $location.path("/prod");
+        $location.path("/prod");
+
+
     };
 
-    $scope.removeProd = function (idx) {
-      productSvc.deleteProd(idx);
+    $scope.editProd = function (prod) {
+      productSvc.editProd(prod)
+        $location.path("/prod");
+
     };
 
-    $scope.editProd = function (idx, prod) {
-      productSvc.editProd(idx, prod);
+    $scope.deleteProd = function (id) {
+      productSvc.deleteProd(id)
+        $location.path("/prod");
 
-      $location.path("/prod");
     };
+    $rootScope.$on("prod:added", function () {
+          $scope.prods = pfSvc.getProds();
+    });
+
+    $rootScope.$on("prod:updated", function () {
+        $scope.prods = pfSvc.getProds();
+    });
+
+    $rootScope.$on("prod:deleted", function () {
+        $scope.prods = pfSvc.getProds();
+    });
+
+
 
   });

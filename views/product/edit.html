@@ -1,8 +1,22 @@
-<h2>PRODUCT <LIST></LIST></h2>
+<header>
+  <h1><a href="#/">ProductFlipbook</a> - Admin</h1>
+  <nav>
+    <ul>
+      <li><a href="#/prod"><i class="fa fa-eye"></i></a></li>
+      <li><a href="#/prod/new"><i class="fa fa-plus"></i></a></li>
+    </ul>
+  </nav>
+</header>
+<div class="edit container">
+<h2>Edit Product</h2>
 <form action="" ng-submit="editProd(singleProd)">
-    <input type="url" ng-model="singleProd.image">
-    <h3><input type="text" ng-model="singleProd.title"/></h3>
-    <p><input type="price" ng-model="singleProd.price"/></p>
-    <textarea ng-model="singleProd.description" name="" id="" cols="30" rows="10"></textarea>
-    <button type="submit">Done</button>
+    <input type="text" ng-model="singleProd.name" value="singleProd.name"/>
+    <textarea id="" cols="30" rows="10" ng-model="singleProd.description">
+        {{singleProd.description}}
+    </textarea>
+    <input type="text" ng-model="singleProd.img_url" value="singleProd.img_url">
+    <input type="text" ng-model="singleProd.price" value="singleProd.price">
+
+    <button type="submit">UPDATE</button>
 </form>
+</div>
